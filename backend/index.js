@@ -64,7 +64,7 @@ app.post("/api/acceptOrder", async (req, res) => {
 });
 
 app.post("/api/delivered", async (req, res) => {
-  const result = await Order.find({ Status: "Accepted" }, { _id: 0 })
+  const result = await Order.find({ Status: "Accepted" }, { _id: 1 })
     .then((response) => {
       console.log("aaa", response);
       res.send(response);
@@ -77,7 +77,7 @@ app.post("/api/delivered", async (req, res) => {
 
 app.post("/api/DineOrderList", async (req, res) => {
     console.log("jhahah");
-    const result = await Dine.find({}, { _id: 0 })
+    const result = await Dine.find({}, { _id: 1 })
       .then((response) => {
         console.log(response);
         res.send(response);
