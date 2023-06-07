@@ -1,0 +1,55 @@
+.cancelbutt,
+.acceptbutt {
+  text-transform: uppercase;
+  background-color: red;
+  font-size: 16px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 4px;
+  padding: 10px;
+  transition: 0.5s;
+  width: 70;
+  display: block;
+}
+
+.acceptbutt {
+  background-color: green;
+}
+.cancelbutt {
+  background-color: red;
+}
+
+.cancelbutt,
+.acceptbutt :focus {
+  outline: none;
+}
+
+.acceptbutt:hover {
+  transition: 0.5s;
+  background: white;
+  border-radius: 5px;
+  color: green;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+.cancelbutt:hover {
+  transition: 0.5s;
+  background: white;
+  border-radius: 5px;
+  color: red;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box {
+  margin-right: 1in;
+  margin-left: 1in;
+}
+#title {
+  text-align: center;
+  margin: 0.5in;
+  color: white;
+  background-color: black;
+}
