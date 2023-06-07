@@ -10,7 +10,7 @@ const Dine = require("./Models/DineIn");
 //-------------------------------------------------------------
 
 let url =
-  "mongodb+srv://areeb:12345@cluster0.hcn5lr8.mongodb.net/";
+"mongodb+srv://areeb:12345@cluster0.hcn5lr8.mongodb.net/";
 
 mongoose
   .connect(url)
@@ -25,7 +25,7 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(cors());
-const port = 3000;
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
@@ -64,7 +64,7 @@ app.post("/api/acceptOrder", async (req, res) => {
 });
 
 app.post("/api/delivered", async (req, res) => {
-  const result = await Order.find({ Status: "Accepted" }, { _id: 1 })
+  const result = await Order.find({ Status: "Accepted" }, { _id: 0 })
     .then((response) => {
       console.log("aaa", response);
       res.send(response);
@@ -77,7 +77,7 @@ app.post("/api/delivered", async (req, res) => {
 
 app.post("/api/DineOrderList", async (req, res) => {
     console.log("jhahah");
-    const result = await Dine.find({}, { _id: 1 })
+    const result = await Dine.find({}, { _id: 0 })
       .then((response) => {
         console.log(response);
         res.send(response);

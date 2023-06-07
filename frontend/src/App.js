@@ -7,6 +7,7 @@ import ViewRecent from './ViewRecent';
 function App() {
   return (
    <>
+   <h1 style={{textAlign: "center"}}>FAST Restaurant</h1>
    <ViewDineOrders/>
    <ViewHistory/>
    <ViewOrders/>
