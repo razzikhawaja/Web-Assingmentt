@@ -3,15 +3,18 @@ import ViewDineOrders from './ViewDineOrders';
 import ViewHistory from './ViewHistory';
 import ViewOrders from './ViewOrders';
 import ViewRecent from './ViewRecent';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   return (
    <>
-   <h1 style={{textAlign: "center"}}>FAST Restaurant</h1>
+   <Header/>
    <ViewDineOrders/>
    <ViewHistory/>
    <ViewOrders/>
    <ViewRecent/>
+   <Footer/>
    </>
   );
 }
