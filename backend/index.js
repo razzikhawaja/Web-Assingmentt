@@ -33,7 +33,7 @@ app.listen(port, () => {
 
 //rider
 app.post("/api/OrderList", async (req, res) => {
-  const result = await Order.find({}, { _id: 1 })
+  const result = await Order.find({}, { _id: 0 })
     .then((response) => {
       console.log("aaa", response);
       res.send(response);

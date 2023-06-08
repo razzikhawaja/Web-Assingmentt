@@ -58,27 +58,28 @@ const ViewOrders = () => {
 };
 
 const Row = (props) => {
-  const cancelHandel = () => {
-    const request = {
-      url: "http://localhost:3001/api/cancelOrder",
-      method: "POST",
-      data: props,
-    };
+  const [orderStatus, setOrderStatus] = useState('');
 
-    axios(request)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const cancelHandel = () => {
+    const updatedStatus = 'cancel'; // Set the status to 'cancel' when cancel button is clicked
+    setOrderStatus(updatedStatus);
+    sendOrderStatus(updatedStatus);
   };
 
   const acceptHandel = () => {
+    const updatedStatus = 'accepted'; // Set the status to 'accepted' when accept button is clicked
+    setOrderStatus(updatedStatus);
+    sendOrderStatus(updatedStatus);
+  };
+
+  const sendOrderStatus = (status) => {
     const request = {
-      url: "http://localhost:3001/api/acceptOrder",
+      url: "http://localhost:3001/api/updateOrderStatus",
       method: "POST",
-      data: props,
+      data: {
+        ...props,
+        Status: status,
+      },
     };
 
     axios(request)
@@ -98,7 +99,7 @@ const Row = (props) => {
         <td>{props.phone}</td>
         <td>{props.bill}</td>
         <td>{props.Dish}</td>
-        <td>{props.Status}</td>
+        <td>{orderStatus}</td>
         <td>
           <button className="cancelbutt" onClick={cancelHandel}>
             Cancel
@@ -113,5 +114,6 @@ const Row = (props) => {
     </>
   );
 };
+
 
 export default ViewOrders;
